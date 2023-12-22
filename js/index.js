@@ -19,3 +19,6 @@
 //    });
 // }
 
+const root = document.documentElement;
+root.style.setProperty('--body-w', `${window.innerWidth}px`);
+root.style.setProperty('--body-h', `${window.innerHeight}px`);

@@ -26,7 +26,8 @@ footer .nav-btn.up {
    bottom: 50%;
    border-radius: 100%;
    background: linear-gradient(to right, #0cebeb, #20e3b2, #29ffc6);
-   box-shadow: 0 10px 15px #03898977;
+   box-shadow: 0 10px 15px #03898977,
+               inset 0 0 10px #73ffda;
 }
 footer .nav-btn i {
    font-size: 22px;

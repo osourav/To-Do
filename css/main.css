@@ -11,7 +11,9 @@
 }
 :root {
    --footer-h: 60px;
-   --body-max-w: 380px
+   --body-max-w: 380px;
+   --body-w: 100vw;
+   --body-h: 100vh;
 }
 
 .c { /* center row col */
@@ -39,11 +41,11 @@
 body {
    overflow: hidden;
    position: relative;
-   width: 100vw;
+   width: var(--body-w);
    background: #000;
-   border-left: solid calc(calc(100vw - var(--body-max-w)) / 2) #000;
-   border-right: solid calc(calc(100vw - var(--body-max-w)) / 2) #000;
-   height: 100vh;
+   border-left: solid calc(calc(var(--body-w) - var(--body-max-w)) / 2) #000;
+   border-right: solid calc(calc(var(--body-w) - var(--body-max-w)) / 2) #000;
+   height: var(--body-h);
    display: grid;
    grid-template-rows: auto var(--footer-h);
    background: #e7e7e7;
