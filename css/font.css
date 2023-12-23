@@ -1,0 +1,85 @@
+@font-face {
+   font-family: f;
+   src: url("../src/fonts/Righteous.ttf") format("truetype");
+}
+
+@font-face {
+   font-family: f1;
+   src: url("../src/fonts/Exo-Regular.ttf") format("truetype");
+}
+@font-face {
+   font-family: f1b;
+   src: url("../src/fonts/Exo-Bold.ttf") format("truetype");
+}
+
+@font-face {
+   font-family: f2;
+   src: url("../src/fonts/Oswald-Regular.ttf") format("truetype");
+}
+@font-face {
+   font-family: f2b;
+   src: url("../src/fonts/Oswald-Bold.ttf") format("truetype");
+}
+
+@font-face {
+   font-family: f3;
+   src: url("../src/fonts/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+   font-family: f3b;
+   src: url("../src/fonts/Roboto-Bold.ttf") format("truetype");
+}
+
+@font-face {
+   font-family: f4;
+   src: url("../src/fonts/ProductSans-Regular.ttf") format("truetype");
+}
+@font-face {
+   font-family: f4b;
+   src: url("../src/fonts/ProductSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+   font-family: f5;
+   src: url("../src/fonts/AlegreyaSansSC-Regular.ttf") format("truetype");
+}
+@font-face {
+   font-family: f5b;
+   src: url("../src/fonts/AlegreyaSansSC-Bold.ttf") format("truetype");
+}
+
+@font-face {
+   font-family: f6;
+   src: url("../src/fonts/Nunito-Regular.ttf") format("truetype");
+}
+@font-face {
+   font-family: f6b;
+   src: url("../src/fonts/Nunito-Bold.ttf") format("truetype");
+}
+
+@font-face {
+   font-family: f7;
+   src: url("../src/fonts/RobotoSlab-Regular.ttf") format("truetype");
+}
+@font-face {
+   font-family: f7b;
+   src: url("../src/fonts/RobotoSlab-Bold.ttf") format("truetype");
+}
+
+@font-face {
+   font-family: f8;
+   src: url("../src/fonts/JosefinSans-Regular.ttf") format("truetype");
+}
+@font-face {
+   font-family: f8b;
+   src: url("../src/fonts/JosefinSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+   font-family: f9;
+   src: url("../src/fonts/Mali-Regular.ttf") format("truetype");
+}
+@font-face {
+   font-family: f9b;
+   src: url("../src/fonts/Mali-Bold.ttf") format("truetype");
+}

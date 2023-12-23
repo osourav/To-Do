@@ -7,13 +7,17 @@
    -moz-user-select: none;
    -webkit-user-select: none;
 
-   /* outline: solid 1px #f002; */
+   outline: solid 1px #f002;
 }
 :root {
+   --icon-color-default: #696969;
+   --icon-s: 24px;
+   --border-r: 15px;
    --footer-h: 60px;
    --body-max-w: 380px;
    --body-w: 100vw;
    --body-h: 100vh;
+   --home-header-h: 60px;
 }
 
 .c { /* center row col */
@@ -37,6 +41,14 @@
    width: 100%;
    height: 100%;
 }
+.rfw { /* relative full 100% width */
+   position: relative;
+   width: 100%;
+}
+.rfh { /* relative full 100% height */
+   position: relative;
+   height: 100%;
+}
 
 body {
    overflow: hidden;
@@ -54,4 +66,7 @@ main {
    position: relative;
    width: 100%;
    height: 100%;
+   touch-action: none;
+   -ms-touch-action: none;
+   -webkit-touch-callout: none;
 }

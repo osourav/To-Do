@@ -9,8 +9,11 @@ footer {
    background: #fff;
    place-items: center;
    border-top: solid 1px #0002;
-   border-top-right-radius: 15px;
-   border-top-left-radius: 15px;
+   border-top-right-radius: var(--border-r);
+   border-top-left-radius: var(--border-r);
+   touch-action: none;
+   -ms-touch-action: none;
+   -webkit-touch-callout: none;
 }
 footer .nav-btn {
    position: relative;
@@ -30,8 +33,8 @@ footer .nav-btn.up {
                inset 0 0 10px #73ffda;
 }
 footer .nav-btn i {
-   font-size: 22px;
-   color: #696969;
+   font-size: var(--icon-s);
+   color: var(--icon-color-default);
    transition: color 300ms ease-in-out;
 }
 footer .nav-btn.up i {
@@ -44,8 +47,8 @@ footer .nav-btn.active i {
 footer svg {
    position: absolute;
    width: calc(100% / 5);
-   bottom: -5px;
-   transform: rotate(-8deg) translate(-10px);
+   bottom: -6px;
+   transform: rotate(-8deg) translate(-12px);
    transition: left 300ms ease-in-out;
 }
 footer .nav-btn.active ~ svg {

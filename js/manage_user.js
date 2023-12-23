@@ -1,11 +1,11 @@
 
-firebase.auth().onAuthStateChanged((user) => {
-   if (user) {
-      console.log('User is signed in:', user.displayName);
-   } else {
-      console.log('User is signed out');
-   }
-});
+// firebase.auth().onAuthStateChanged((user) => {
+//    if (user) {
+//       console.log('User is signed in:', user.displayName);
+//    } else {
+//       console.log('User is signed out');
+//    }
+// });
 
 function logIn() {
 
