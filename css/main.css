@@ -6,52 +6,60 @@
    -ms-user-select: none;
    -moz-user-select: none;
    -webkit-user-select: none;
+   font-size: 16px;
 
-   outline: solid 1px #f002;
+   /* outline: solid 1px #f002; */
 }
+
 :root {
    --icon-color-default: #696969;
    --icon-s: 24px;
    --border-r: 15px;
-   --footer-h: 60px;
    --body-max-w: 380px;
-   --body-w: 100vw;
-   --body-h: 100vh;
-   --home-header-h: 60px;
+   --body-w: 100svw;
+   --body-h: 100svh;
+   --footer-h: 60px;
+   --home-header-h: 90px;
 }
 
-.c { /* center row col */
+.c {
+   /* center row col */
    display: grid;
    place-items: center;
 }
-.cr { /* center row */
+.cr {
+   /* center row */
    display: flex;
    justify-content: center;
 }
-.cc { /* center col */
+.cc {
+   /* center col */
    display: flex;
    align-items: center;
 }
-.f { /* full 100% height width */
+.f {
+   /* full 100% height width */
    width: 100%;
    height: 100%;
 }
-.rf { /* relative full 100% height width */
+.rf {
+   /* relative full 100% height width */
    position: relative;
    width: 100%;
    height: 100%;
 }
-.rfw { /* relative full 100% width */
+.rfw {
+   /* relative full 100% width */
    position: relative;
    width: 100%;
 }
-.rfh { /* relative full 100% height */
+.rfh {
+   /* relative full 100% height */
    position: relative;
    height: 100%;
 }
 
 body {
-   overflow: hidden;
    position: relative;
    width: var(--body-w);
    background: #000;
@@ -61,7 +69,9 @@ body {
    display: grid;
    grid-template-rows: auto var(--footer-h);
    background: #e7e7e7;
+   overflow: hidden;
 }
+
 main {
    position: relative;
    width: 100%;

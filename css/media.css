@@ -1,0 +1,18 @@
+.io {
+   cursor: default;
+}
+.io.i {
+   transform: scale(1);
+   transition: linear 200ms transform;
+}
+.io.i:active {
+   transform: scale(1.5);
+}
+@media (hover: hover) and (pointer: fine) {
+   .io {
+      cursor: pointer;
+   }
+   .io.i:hover {
+      transform: scale(1.2);
+   }
+}

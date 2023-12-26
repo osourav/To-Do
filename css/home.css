@@ -6,55 +6,131 @@
    display: grid;
 }
 
+/* ------- header ------- */
 #home>header {
-   --_w-min: min(var(--body-w), var(--body-max-w));
-   --_extra: max(calc(var(--_w-min) - 300px), 0px);
-   padding: 0 calc(var(--_extra) / 2);
-
-   display: grid;
-   grid-template-columns: 1fr 3fr 1fr;
-   place-items: center;
+   position: relative;
+   width: 100%;
    height: var(--home-header-h);
    background: #ffffff;
    overflow: hidden;
-   border-bottom-left-radius: var(--border-r);
-   border-bottom-right-radius: var(--border-r);
-   border-bottom: solid 1px #0002;
+   box-shadow: 0 2px 8px #0002;
+   display: grid;
+   grid-template-rows: 5fr 3fr;
+   gap: 6px;
 }
 
-#home>header #dateTask {
+#home>header #dates {
+   --_w-min: min(var(--body-w), var(--body-max-w));
+   --_extra: max(calc(var(--_w-min) - 340px), 0px);
+   padding: 0 calc(var(--_extra) / 2);
+   margin-top: 6px;
+   position: relative;
+   width: 100%;
+   display: grid;
+   grid-template-columns: 1fr 3fr 1fr;
+   gap: 5px;
+   place-items: center;
+}
+
+#home>header #showDays {
+   position: relative;
+   width: 100%;
+   height: 100%;
+   border-radius: 5px;
+   display: grid;
+   grid-template-rows: 1fr 1fr;
+   box-shadow: 0 0 3px #00000033;
+}
+
+#home>header #showDays .text {
+   font-family: f5b;
+   font-size: 18px;
+}
+
+#home>header #showDays .num {
+   font-family: f8b;
+   font-size: 18px;
+}
+
+#showDays .dd-mm-yy {
+   position: relative;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   gap: 4px;
+   justify-content: center;
+   align-items: flex-end;
+}
+
+#showDays #day {
+   position: relative;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   gap: 4px;
+   justify-content: center;
+   align-items: flex-start;
+}
+
+#home>header .icon {
+   position: relative;
+   width: 50px;
+   height: 30px;
+   display: grid;
+   place-items: center;
+   border-radius: 3px;
+   box-shadow: 0 0 2px #00000033;
+}
+
+#home>header .icon>p {
+   font-family: f8b;
+   color: var(--icon-color-default);
+}
+
+#home>header #task-category {
    position: relative;
    width: 100%;
    height: 100%;
    display: grid;
-}
-
-#home>header #dateTask * {
-   font-family: sb7;
-}
-
-#home>header #dateTask #showDays {
-   position: relative;
-   display: flex;
-   justify-content: center;
-   gap: 3px;
-   align-items: center;
-}
-
-#home>header #dateTask #tudayTaskCount {
-   position: relative;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-
-#home .icon {
-   position: relative;
-   width: 80%;
-   height: 80%;
-   display: grid;
+   grid-template-columns: repeat(3, 1fr);
    place-items: center;
-   font-size: var(--icon-s);
-   color: var(--icon-color-default);
 }
 
+#task-category .category {
+   position: relative;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 8px;
+}
+
+#task-category .category.active::before {
+   content: "";
+   position: absolute;
+   width: 100%;
+   height: 7%;
+   bottom: 0;
+   background: #0cebeb;
+}
+
+#task-category .name {
+   font-family: f5;
+   color: var(--icon-color-default);
+   font-weight: 600;
+}
+
+#task-category .remaining {
+   font-family: f6b;
+   color: var(--icon-color-default);
+   font-size: 12px;
+}
+
+#task-category .category.active .name {
+   color: #29ffc6;
+}
+
+#task-category .category.active .remaining {
+   color: red;
+}

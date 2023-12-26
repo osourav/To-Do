@@ -12,6 +12,7 @@
    <link rel="stylesheet" href="./css/main.css">
    <link rel="stylesheet" href="./css/home.css">
    <link rel="stylesheet" href="./css/footer.css">
+   <link rel="stylesheet" href="./css/media.css">
 
    <!-- link script -->
    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js" defer></script>
@@ -28,33 +29,55 @@
 <body>
    <main>
 
+      <!-- home -->
       <div id="home">
-         <header class="rfw cr">
-            <div id="perDate" class="icon">
-               <i class="sbi-chevron-left1"></i>
-            </div>
-            <div id="dateTask">
+         <header>
+
+            <div id="dates">
+               <div id="perDate" class="io icon"><p>29</p></div>
                <div id="showDays">
-                  <div id="date" class="date">30</div>
-                  <div id="month" class="month">november</div>
-                  <div id="day" class="day">MON</div>
+                  <div class="io dd-mm-yy">
+                     <div id="date" class="date num">30</div>
+                     <div id="month" class="month text">November</div>
+                     <div id="year" class="num">2023</div>
+                  </div>
+                  <div id="day" class="day text">Monday</div>
                </div>
-               <div id="tudayTaskCount">5 tasks</div>
+               <div id="nextDate" class="io icon"><p>1</p></div>
             </div>
-            <div id="nextDate" class="icon">
-               <i class="sbi-chevron-right1"></i>
+
+            <div id="task-category">
+               <div class="io category active">
+                  <p class="name">Mix</p>
+                  <p class="remaining">5</p>
+               </div>
+               <div class="io category">
+                  <p class="name">Daily</p>
+                  <p class="remaining">3</p>
+               </div>
+               <div class="io category">
+                  <p class="name">Long</p>
+                  <p class="remaining">2</p>
+               </div>
             </div>
+
          </header>
+
+         <div id="tasks">
+            <section class="sec"></section>
+            <section class="sec"></section>
+            <section class="sec"></section>
+         </div>
       </div>
 
    </main>
 
    <footer>
-      <div class="nav-btn active"><i class="sbi-home1"></i></div>
-      <div class="nav-btn"><i class="sbi-list_alt"></i></div>
-      <div class="nav-btn up"><i class="sbi-plus1"></i></div>
-      <div class="nav-btn"><i class="sbi-insert_chart"></i></div>
-      <div class="nav-btn"><i class="sbi-settings"></i></div>
+      <div class="io i nav-btn active"><i class="sbi-home1"></i></div>
+      <div class="io i nav-btn"><i class="sbi-list_alt"></i></div>
+      <div class="io i nav-btn up"><i class="sbi-plus1"></i></div>
+      <div class="io i nav-btn"><i class="sbi-insert_chart"></i></div>
+      <div class="io i nav-btn"><i class="sbi-settings"></i></div>
 
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
          <path fill="#0cebeb" fill-opacity="1"
