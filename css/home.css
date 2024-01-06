@@ -2,8 +2,9 @@
    position: relative;
    width: 100%;
    height: 100%;
-   background: linear-gradient(120deg, #ffffff, #f9f9f9, #f4f4f4, #efefef, #eaeaea);
-   display: grid;
+   display: flex;
+   flex-direction: column;
+
 }
 
 /* ------- header ------- */
@@ -17,6 +18,7 @@
    display: grid;
    grid-template-rows: 5fr 3fr;
    gap: 6px;
+   z-index: 4; 
 }
 
 #home>header #dates {
@@ -106,13 +108,8 @@
    gap: 8px;
 }
 
-#task-category .category.active::before {
-   content: "";
-   position: absolute;
-   width: 100%;
-   height: 7%;
-   bottom: 0;
-   background: #0cebeb;
+#task-category .category>p {
+   transition: linear 200ms color;
 }
 
 #task-category .name {
@@ -133,4 +130,166 @@
 
 #task-category .category.active .remaining {
    color: red;
+}
+
+#task-category span {
+   position: absolute;
+   width: calc(var(--body-sw) / 3);
+   height: 7%;
+   left: 0;
+   bottom: 0;
+   background: #0cebeb;
+   transition: linear 200ms left;
+}
+
+#task-category .category.active:nth-child(2)~span {
+   left: calc(var(--body-sw) / 3);
+}
+
+#task-category .category.active:nth-child(3)~span {
+   left: calc(var(--body-sw) / 3 * 2);
+}
+
+/* ---- tasks ----- */
+#home #tasks {
+   position: relative;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+}
+
+#home #tasks .sec {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   padding-bottom: var(--footer-h);
+   display: grid;
+   place-items: center;
+   background-image: linear-gradient(120deg, #ffffff, #f9f9f9, #f4f4f4, #efefef, #eaeaea);
+   transition: none;
+   overflow: hidden;
+}
+
+#home #tasks:not(.active) .sec {
+   transition: left 300ms ease-in-out;
+}
+
+#home #tasks .sec:first-child {
+   left: 0%;
+   z-index: 3;
+}
+
+#home #tasks .sec:nth-child(2) {
+   background: #d9ffd9;
+   left: 0;
+   z-index: 1;
+}
+
+#home #tasks .sec:last-child {
+   background: #c6c6ff;
+   left: 100%;
+   z-index: 2;
+}
+
+#home #tasks .sec .task-line {
+   position: relative;
+   width: 100%;
+   min-height: 100%;
+   padding: 4px;
+   display: flex;
+   flex-direction: column;
+   gap: 12px;
+   overflow-y: scroll;
+}
+
+#tasks .sec .task-line .time-sec {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+   border-top: solid 1px #0007;
+}
+
+#tasks .time-sec .start-time {
+   position: relative;
+   width: 100%;
+   height: 20px;
+   font-family: f6b;
+   display: flex;
+   justify-content: start;
+   align-items: center;
+   padding: 4px;
+}
+#tasks .time-sec .todos {
+   position: relative;
+   width: 100%;
+   height: auto;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+   gap: 5px;
+}
+#tasks .todos .todo {
+   position: relative;
+   width: var(--todo-w);
+   height: auto;
+   margin-right: 5px;
+   display: grid;
+   grid-template-columns: 30px auto;
+   border-radius: 5px;
+   background: #ddd;
+   border: solid 1px #0003;
+   overflow: hidden;
+}
+#tasks .todos .todo .complete-btn {
+   position: relative;
+   width: calc(100% - 2px);
+   height: calc(100% - 2px);
+   margin: 1px;
+   display: grid;
+   place-items: center;
+   background: linear-gradient(to right, #fefefe 20%, #eee);
+   border-top-right-radius: 10px;
+   border-bottom-right-radius: 10px;
+   box-shadow: 3px 0 2px #0003;
+}
+#tasks .todos .todo .complete-btn i {
+   font-size: 18px;
+   color: #cdffcd;
+   text-shadow: 0 0 1px #000;
+}
+#tasks .todos .todo .data {
+   position: relative;
+   width: 100%;
+   height: auto;
+}
+#tasks .todos .data .txt {
+   position: relative;
+   width: 100%;
+   display: flex;
+   justify-content: start;
+   align-items: center;
+   padding-left: 5px;
+}
+#tasks .todos .data .todo-name {
+   height: 30px;
+   font-family: f1b;
+}
+#tasks .todos .data .time-range {
+   height: 20px;
+   font-family: f6;
+   font-size: 12px;
+}
+#tasks .todos .data .edit-btn {
+   position: absolute;
+   width: calc(30px - 2px);
+   height: calc(30px - 2px);
+   border-radius: 8px;
+   margin: 1px;
+   right: 0;
+   top: 0;
+   color: #0cebeb;
+   background: #eee;
+   display: grid;
+   place-items: center;
 }

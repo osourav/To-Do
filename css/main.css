@@ -7,8 +7,13 @@
    -moz-user-select: none;
    -webkit-user-select: none;
    font-size: 16px;
+   -ms-overflow-style: none;
+   scrollbar-width: none;
 
    /* outline: solid 1px #f002; */
+}
+*::-webkit-scrollbar {
+   display: none;
 }
 
 :root {
@@ -18,8 +23,11 @@
    --body-max-w: 380px;
    --body-w: 100svw;
    --body-h: 100svh;
+   --body-sw: min(var(--body-max-w), var(--body-w));
+   --body-sh: min(var(--body-max-h), var(--body-h));
    --footer-h: 60px;
    --home-header-h: 90px;
+   --todo-w: 320px;
 }
 
 .c {
@@ -63,12 +71,10 @@ body {
    position: relative;
    width: var(--body-w);
    background: #000;
-   border-left: solid calc(calc(var(--body-w) - var(--body-max-w)) / 2) #000;
-   border-right: solid calc(calc(var(--body-w) - var(--body-max-w)) / 2) #000;
+   border-left: solid calc(calc(var(--body-w) - var(--body-sw)) / 2) transparent;
+   border-right: solid calc(calc(var(--body-w) - var(--body-sw)) / 2) transparent;
    height: var(--body-h);
    display: grid;
-   grid-template-rows: auto var(--footer-h);
-   background: #e7e7e7;
    overflow: hidden;
 }
 

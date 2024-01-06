@@ -19,6 +19,7 @@
    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js" defer></script>
    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js" defer></script>
    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js" defer></script>
+   <script src="./js/utils.js" defer></script>
    <script src="./js/config.js" defer></script>
    <script src="./js/manage_user.js" defer></script>
    <script src="./js/index.js" defer></script>
@@ -34,20 +35,20 @@
          <header>
 
             <div id="dates">
-               <div id="perDate" class="io icon"><p>29</p></div>
-               <div id="showDays">
-                  <div class="io dd-mm-yy">
-                     <div id="date" class="date num">30</div>
-                     <div id="month" class="month text">November</div>
-                     <div id="year" class="num">2023</div>
+               <div id="perDate" class="io icon"><p>28</p></div>
+               <div id="showDays" class="io">
+                  <div class="dd-mm-yy">
+                     <div id="date" class="date dt num">29</div>
+                     <div id="month" class="month dt text">November</div>
+                     <div id="year" class="num dt">2023</div>
                   </div>
-                  <div id="day" class="day text">Monday</div>
+                  <div id="day" class="day dt text">Monday</div>
                </div>
-               <div id="nextDate" class="io icon"><p>1</p></div>
+               <div id="nextDate" class="io icon"><p>30</p></div>
             </div>
 
             <div id="task-category">
-               <div class="io category active">
+               <div class="io category">
                   <p class="name">Mix</p>
                   <p class="remaining">5</p>
                </div>
@@ -56,17 +57,82 @@
                   <p class="remaining">3</p>
                </div>
                <div class="io category">
-                  <p class="name">Long</p>
+                  <p class="name">Only</p>
                   <p class="remaining">2</p>
                </div>
+               <span></span>
             </div>
 
          </header>
 
          <div id="tasks">
-            <section class="sec"></section>
-            <section class="sec"></section>
-            <section class="sec"></section>
+            <section class="sec">
+               <div class="task-line">
+                  <section class="time-sec">
+                     <div class="start-time">10:30 AM</div>
+
+                     <div class="todos">
+                        <div class="todo">
+                           <div class="complete-btn"><i class="sbi-check"></i></div>
+                           <div class="data">
+                              <div class="edit-btn"><i class="sbi-feather"></i></div>
+                              <div class="todo-name txt">Complete My Project</div>
+                              <div class="time-range txt">05/01/2024 06:00 AM - 10:30 AM</div>
+                           </div>
+                        </div>
+                        <div class="todo">
+                           <div class="complete-btn"><i class="sbi-check"></i></div>
+                           <div class="data">
+                              <div class="edit-btn"><i class="sbi-feather"></i></div>
+                              <div class="todo-name txt">Complete My Assignment</div>
+                              <div class="time-range txt">04/01/2024 08:00 AM - 10:30 AM</div>
+                           </div>
+                        </div>
+                     </div>
+                  </section>
+
+                  <section class="time-sec">
+                     <div class="start-time">12:00 PM</div>
+
+                     <div class="todos">
+                        <div class="todo">
+                           <div class="complete-btn"><i class="sbi-check"></i></div>
+                           <div class="data">
+                              <div class="edit-btn"><i class="sbi-feather"></i></div>
+                              <div class="todo-name txt">COC ATTACK</div>
+                              <div class="time-range txt">05/01/2024 06:00 AM - 12:30 PM</div>
+                           </div>
+                        </div>
+                     </div>
+                  </section>
+
+                  <section class="time-sec">
+                     <div class="start-time">02:30 PM</div>
+
+                     <div class="todos">
+                        <div class="todo">
+                           <div class="complete-btn"><i class="sbi-check"></i></div>
+                           <div class="data">
+                              <div class="edit-btn"><i class="sbi-feather"></i></div>
+                              <div class="todo-name txt">Call Home</div>
+                              <div class="time-range txt">06:00 AM - 02:30 PM</div>
+                           </div>
+                        </div>
+                        <div class="todo">
+                           <div class="complete-btn"><i class="sbi-check"></i></div>
+                           <div class="data">
+                              <div class="edit-btn"><i class="sbi-feather"></i></div>
+                              <div class="todo-name txt">Complete My Drawing</div>
+                              <div class="time-range txt">01/01/2024 10:00 AM - 02:30 PM</div>
+                           </div>
+                        </div>
+                     </div>
+                  </section>
+
+               </div>
+            </section>
+            <section class="sec">Daily</section>
+            <section class="sec">Only</section>
          </div>
       </div>
 

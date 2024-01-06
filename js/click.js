@@ -1,15 +1,69 @@
+const taskSecs = document.querySelectorAll("#tasks .sec");
+const home_category = document.querySelectorAll(".category");
+
 const nav_btn = document.querySelectorAll(".nav-btn:not(.up)");
-nav_btn.forEach(btn => {
-   btn.addEventListener("click", () => {
-      nav_btn.forEach(btn => btn.classList.remove("active"));
-      btn.classList.add("active");
-   })
+let startX, movedX;
+let activeCategory = 0;
+let isHolding = false;
+const minMove = 60;
+
+nav_btn.forEach((btn, i) => {
+   btn.addEventListener("click", () => toggle(nav_btn, i));
 });
 
-const home_category = document.querySelectorAll(".category");
-home_category.forEach(btn => {
+moveSlide(activeCategory, 1);
+
+home_category.forEach((btn, i) => {
    btn.addEventListener("click", () => {
-      home_category.forEach(btn => btn.classList.remove("active"));
-      btn.classList.add("active");
+      const tempCategory = activeCategory;
+      moveSlide(i, tempCategory);
    })
 });
+ 
+
+tasks.addEventListener("mousedown", holdingStart);
+window.addEventListener("mousemove", dragging);
+window.addEventListener("mouseup", holdingEnd);
+
+tasks.addEventListener("touchstart", holdingStart);
+window.addEventListener("touchmove", dragging);
+window.addEventListener("touchend", holdingEnd);
+
+function holdingStart(E) {
+   let e = E;
+   if (e.type == "touchstart") e = e.touches[0];
+   isHolding = true;
+   startX = e.clientX;
+   tasks.classList.add("active");
+}
+
+function dragging(E) {
+   if (!isHolding) return;
+   let e = E;
+   if (e.type == "touchmove") e = e.touches[0];
+   movedX = e.clientX - startX;
+
+   // console.log(movedX);
+
+   if (movedX > 0) {
+      setCategoryPosition(movedX, true);
+   } else if (movedX < 0) {
+      setCategoryPosition(movedX, false);
+   }
+}
+
+function holdingEnd() {
+   if (!isHolding) return;
+   isHolding = false;
+   
+   if (movedX >= minMove) {
+      setCategoryPosition(0, true, true);
+   } else if (movedX <= -minMove) {
+      setCategoryPosition(0, false, true);
+   } else if (movedX > 0) {
+      setCategoryPosition(0, true);
+   } else if (movedX < 0) {
+      setCategoryPosition(0, false);
+   }
+   tasks.classList.remove("active");
+}
